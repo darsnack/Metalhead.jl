@@ -4,5 +4,5 @@
 *.bson
 
 # manifests
-docs/Manifest.toml
-Manifest.toml
+/docs/Manifest.toml
+/Manifest.toml
