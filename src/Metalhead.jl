@@ -3,12 +3,10 @@ module Metalhead
 using Base: Integer
 using Flux
 using Flux: outputsize, Zygote
-using Functors
+import Functors
+import Functors: @functor, functor
 using BSON
 using Artifacts, LazyArtifacts
-
-import Functors
-import Functors: functor
 
 # Models
 include("utilities.jl")
