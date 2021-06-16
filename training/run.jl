@@ -22,7 +22,7 @@ const MODELS = [VGG19, ResNet50, GoogLeNet, DenseNet121, SqueezeNet]
 train_dataset = shuffleobs(ImageNet(folder=TRAINDIR, metadata=TRAINMETA))
 val_dataset = shuffleobs(ImageNet(folder=VALDIR, metadata=VALMETA))
 
-bs = 256
+bs = 64
 train_loader = DataLoaders.DataLoader(train_dataset, bs)
 val_loader = DataLoaders.DataLoader(val_dataset, bs)
 

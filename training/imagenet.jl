@@ -4,8 +4,8 @@ struct ImageNet
   order::Vector{String}
 end
 
-const IMG_MEAN = (0.485, 0.456, 0.406)
-const IMG_STDDEV = (0.229, 0.224, 0.225)
+const IMG_MEAN = reverse((0.485, 0.456, 0.406))
+const IMG_STDDEV = reverse((0.229, 0.224, 0.225))
 const CMYK_IMAGES = [
   # "n01739381_1309.JPEG",
   # "n02077923_14822.JPEG",
