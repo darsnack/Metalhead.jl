@@ -1,6 +1,4 @@
 using CUDA
-CUDA.device!(CUDA.CuDevice(5))
-CUDA.allowscalar(false)
 using Flux
 using Metalhead
 using MAT, Images, FileIO
@@ -14,11 +12,11 @@ import LearnBase
 include("imagenet.jl")
 include("loops.jl")
 
-const DATADIR = "/home/datasets/ILSVRC"
+const DATADIR = "/group/ece/ececompeng/lipasti/libraries/datasets/ILSVRC"
 const TRAINDIR = joinpath(DATADIR, "Data/CLS-LOC/train")
-const TRAINMETA = joinpath("/home/darsnack/train.txt")
+const TRAINMETA = joinpath(DATADIR, "train.txt")
 const VALDIR = joinpath(DATADIR, "Data/CLS-LOC/val")
-const VALMETA = joinpath("/home/darsnack/val.txt")
+const VALMETA = joinpath(DATADIR, "val.txt")
 const MODELS = [VGG19, ResNet50, GoogLeNet, DenseNet121, SqueezeNet]
 
 train_dataset = shuffleobs(ImageNet(folder=TRAINDIR, metadata=TRAINMETA))
@@ -33,18 +31,18 @@ loss(x, y, m) = loss(m(x), y)
 accuracy(x, y, m) = mean(Flux.onecold(m(x)) .== Flux.onecold(y))
 accuracy(data, m) = mean(accuracy(x, y, m) for (x, y) in data)
 
-# for model in MODELS
-#   @info "Training $model..."
-#   m = model(pretrain=true) |> gpu
-#   @info accuracy(CuIterator(val_loader), m)
-#   # opt = Flux.Optimiser(WeightDecay(1e-4), ADAM(1e-2))
-#   # schedule = ScheduleIterator(Step(λ = opt[2].eta, γ = 0.5, step_sizes = fill(2, 50)))
-#   # cbs = Flux.throttle(() -> @show(accuracy(CuIterator(val_loader), m)), 60*60)
-#   #       #  Flux.throttle(() -> (GC.gc(); CUDA.reclaim()), 30)]
-#   # for i in 1:10
-#   #   @info "Pass $i / 10..."
-#   #   train!(CuIterator(train_loader), m, opt; loss=loss, nepochs=10, schedule=schedule, cb=cbs)
-#   #   checkpoint = m |> cpu
-#   #   @save "../pretrain-weights/$model.bson" checkpoint
-#   # end
-# end
+for model in MODELS
+  @info "Training $model..."
+  local m = model(pretrain=true) |> gpu
+  @info accuracy(CuIterator(val_loader), m)
+  # opt = Flux.Optimiser(WeightDecay(1e-4), ADAM(1e-2))
+  # schedule = ScheduleIterator(Step(λ = opt[2].eta, γ = 0.5, step_sizes = fill(2, 50)))
+  # cbs = Flux.throttle(() -> @show(accuracy(CuIterator(val_loader), m)), 60*60)
+  #       #  Flux.throttle(() -> (GC.gc(); CUDA.reclaim()), 30)]
+  # for i in 1:10
+  #   @info "Pass $i / 10..."
+  #   train!(CuIterator(train_loader), m, opt; loss=loss, nepochs=10, schedule=schedule, cb=cbs)
+  #   checkpoint = m |> cpu
+  #   @save "../pretrain-weights/$model.bson" checkpoint
+  # end
+end

@@ -98,15 +98,15 @@ version = "0.2.2"
 
 [[ChainRules]]
 deps = ["ChainRulesCore", "Compat", "LinearAlgebra", "Random", "Statistics"]
-git-tree-sha1 = "720fa9a9ce61ff18842a40f501d6a1f8ba771c64"
+git-tree-sha1 = "31ec654b90386e0ed88601e2e08c7df8832c963b"
 uuid = "082447d4-558c-5d27-93f4-14fc19e9eca2"
-version = "0.8.6"
+version = "0.8.10"
 
 [[ChainRulesCore]]
 deps = ["Compat", "LinearAlgebra", "SparseArrays"]
-git-tree-sha1 = "d659e42240c2162300b321f05173cab5cc40a5ba"
+git-tree-sha1 = "dbc9aae1227cfddaa9d2552f3ecba5b641f6cce9"
 uuid = "d360d2e6-b24c-11e9-a2a3-2a2ae2dbcce4"
-version = "0.10.4"
+version = "0.10.5"
 
 [[CodecZlib]]
 deps = ["TranscodingStreams", "Zlib_jll"]
@@ -334,9 +334,9 @@ version = "7.0.0"
 
 [[GPUCompiler]]
 deps = ["DataStructures", "ExprTools", "InteractiveUtils", "LLVM", "Libdl", "Logging", "TimerOutputs", "UUIDs"]
-git-tree-sha1 = "e12c5495c19b852e8840bf2640b539383dda3954"
+git-tree-sha1 = "765d5b600d3177f1d422c9489525938dd8bd95d1"
 uuid = "61eb1bfa-7361-4325-ad38-22787b887f55"
-version = "0.12.0"
+version = "0.12.2"
 
 [[Graphics]]
 deps = ["Colors", "LinearAlgebra", "NaNMath"]
@@ -470,9 +470,9 @@ version = "0.5.1"
 
 [[InfiniteArrays]]
 deps = ["ArrayLayouts", "DSP", "FillArrays", "Infinities", "LazyArrays", "LinearAlgebra", "Statistics"]
-git-tree-sha1 = "c1c3ba6fe2c20721dc44e7db2df43c2652e60089"
+git-tree-sha1 = "81b4318932ff7691e164d5e0a98b55e2992c78c6"
 uuid = "4858937d-0d70-526a-a4dd-2d5cb5dd786c"
-version = "0.10.7"
+version = "0.10.8"
 
 [[Infinities]]
 git-tree-sha1 = "06570a7404df6901f0fa09733dde6f7ae4c68b0a"
@@ -532,9 +532,9 @@ version = "0.8.4"
 
 [[LLVM]]
 deps = ["CEnum", "Libdl", "Printf", "Unicode"]
-git-tree-sha1 = "b499c68a45249b0385585c62f4a9b62b5db8e691"
+git-tree-sha1 = "b3cd5971a37d3ac3c13ca805916b90878c699eaf"
 uuid = "929cbde3-209d-540e-8aea-75f648917ca0"
-version = "3.7.1"
+version = "3.8.0"
 
 [[LazyArrays]]
 deps = ["ArrayLayouts", "FillArrays", "LinearAlgebra", "MacroTools", "MatrixFactorizations", "SparseArrays", "StaticArrays"]
@@ -573,9 +573,9 @@ uuid = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
 
 [[Libiconv_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
-git-tree-sha1 = "8d22e127ea9a0917bc98ebd3755c8bd31989381e"
+git-tree-sha1 = "42b62845d70a619f063a7da093d995ec8e15e778"
 uuid = "94ce4f54-9a6c-5748-9c1c-f9c7231a4531"
-version = "1.16.1+0"
+version = "1.16.1+1"
 
 [[Libtiff_jll]]
 deps = ["Artifacts", "JLLWrappers", "JpegTurbo_jll", "Libdl", "Pkg", "Zlib_jll", "Zstd_jll"]
@@ -660,13 +660,13 @@ version = "0.5.0"
 
 [[Memoization]]
 deps = ["MacroTools"]
-git-tree-sha1 = "ed3f3b19264e531b29d1d6a266336ccec5e597bd"
+git-tree-sha1 = "a9175def295e0dc1f6da80e8e733a01dd0f36a56"
 uuid = "6fafb56a-5788-4b4e-91ca-c0cea6611c73"
-version = "0.1.10"
+version = "0.1.11"
 
 [[Metalhead]]
 deps = ["Artifacts", "BSON", "Flux", "Functors", "LazyArtifacts"]
-git-tree-sha1 = "da783d33d01be7c3e614ac1cdb69930fee8ec501"
+git-tree-sha1 = "0e9397882ea5bff3fedf3a5300f3b68731d0671a"
 repo-rev = "darsnack/vision-refactor"
 repo-url = ".."
 uuid = "dbeba491-748d-5e0e-a39e-b530a07fa0cc"
@@ -724,9 +724,9 @@ uuid = "ca575930-c2e3-43a9-ace4-1e988b2c1908"
 
 [[OffsetArrays]]
 deps = ["Adapt"]
-git-tree-sha1 = "1381a7142eefd4cd12f052a4d2d790fe21bd1d55"
+git-tree-sha1 = "e436bb81d2ce4f01fb02374c4410e5a9229c85f9"
 uuid = "6fe1bfb0-de20-5000-8ca7-80f57d26f881"
-version = "1.9.2"
+version = "1.10.0"
 
 [[OpenSSL_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
@@ -827,9 +827,9 @@ uuid = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
 
 [[Random123]]
 deps = ["Libdl", "Random", "RandomNumbers"]
-git-tree-sha1 = "5fbcfdea78c76cf16be611c9cb1d194f3e448e37"
+git-tree-sha1 = "0e8b146557ad1c6deb1367655e052276690e71a3"
 uuid = "74087812-796a-5b5d-8853-05524746bad3"
-version = "1.4.0"
+version = "1.4.2"
 
 [[RandomNumbers]]
 deps = ["Random", "Requires"]
